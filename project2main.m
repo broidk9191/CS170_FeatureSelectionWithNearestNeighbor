@@ -21,8 +21,11 @@ function project2main()
 
     fprintf("This dataset has %d features (not including the class attribute), with %d instances.\n\n", total_features, total_instances);
 
-    accuracy = LOO(data, 1:total_features);
-    fprintf('Running nearest neighbor with all features, using "leaving-one-out" evaluation, I get an accuracy of %.1f%%\n\n', accuracy * 100);    
+    noF_accuracy = LOO(data, []);
+    fprintf('Running nearest neighbor with no features, using "leaving-one-out" evaluation, I get an accuracy of %.1f%%\n', noF_accuracy * 100);
+
+    allF_accuracy = LOO(data, 1:total_features);
+    fprintf('Running nearest neighbor with all features, using "leaving-one-out" evaluation, I get an accuracy of %.1f%%\n\n', allF_accuracy * 100);    
     
     if choice == 1
         forwardSelection(data);
