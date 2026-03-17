@@ -15,7 +15,7 @@ function project2main()
         choice = input("Your choice: ");
     end
 
-    data = load(filename);
+    data = load(filename); %change to readmatrix to read the extra credit excel sheet
     total_features = size(data, 2) - 1;
     total_instances = size(data, 1);
 
